@@ -56,7 +56,7 @@ def user_input(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     
     # Load vector store safely
-    vector_store = FAISS.load_local("faiss_index", embeddings)
+    vector_store = FAISS.load_local("faiss_index", embeddings,allow_dangerous_deserialization=True)
     docs = vector_store.similarity_search(user_question)
 
     chain = get_conversational_chain()
