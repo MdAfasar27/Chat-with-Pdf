@@ -69,7 +69,7 @@ def user_input(user_question):
 
 def main():
     """Main function for Streamlit app."""
-    st.header("Welcome in BPCL Chat with PDF using Gemini 💁")
+    st.header("Welcome in BPCL Chat with PDF 💁")
     user_question = st.text_input("Ask a Question from the PDF Files")
 
     if user_question:
