@@ -62,7 +62,8 @@ def user_input(user_question):
     chain = get_conversational_chain()
     
     # Use `invoke` instead of the deprecated `__call__` method
-    response = chain.invoke({"input_documents": docs, "question": user_question})
+    response = chain.invoke({"input_documents": docs, "question": user_question}, return_only_outputs=True)
+
     
     print(response)
     st.write("Reply: ", response["output_text"])
